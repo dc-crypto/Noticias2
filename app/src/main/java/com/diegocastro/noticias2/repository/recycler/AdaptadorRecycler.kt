@@ -48,13 +48,13 @@ class AdaptadorRecycler(var context: Context,
             intent.putExtra("data", detalle)
             actividad.startActivity(intent)
 
-           //para compartir las noticias
+           //para compartir las noticias https://developer.android.com/training/sharing/send
        holder.shareBtn.setOnClickListener {
 
-           val intent = Intent(Intent.ACTION_SEND)
-           intent.putExtra(Intent.EXTRA_TEXT, "Hey, checkout this news : " + listDatos[0].url)
-           intent.type = "text/plain"
-           context.startActivity(Intent.createChooser(intent, "Share with :"))
+           val intent2 = Intent(Intent.ACTION_SEND)
+           intent2.putExtra(Intent.EXTRA_TEXT, "Hey, checkout this news : " + listDatos[0].url)
+           intent2.type = "text/plain"
+           context.startActivity(Intent.createChooser(intent2, "Share with :"))
 
            }
         }

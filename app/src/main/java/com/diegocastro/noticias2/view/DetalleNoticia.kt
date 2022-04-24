@@ -2,6 +2,8 @@ package com.diegocastro.noticias2.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import com.diegocastro.noticias2.R
 import com.diegocastro.noticias2.databinding.ActivityDetalleNoticiaBinding
 import com.diegocastro.noticias2.repository.retrofit.Article
@@ -19,7 +21,9 @@ class DetalleNoticia : AppCompatActivity() {
         val texto = intent.extras?.getString("data")
         val noticia: Article = Gson().fromJson(texto, Article::class.java)
 
-        binding.txtTitulo2.text = noticia.title
-        binding.txtNoticia2.text = noticia.description
+        //binding.txtTitulo2.text = noticia.title
+        //binding.txtNoticia2.text = noticia.description
+        val myWebView: WebView = findViewById(R.id.myWebView)
+        myWebView.loadUrl(noticia.url)
     }
 }
