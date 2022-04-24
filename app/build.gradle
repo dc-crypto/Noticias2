@@ -67,4 +67,7 @@ dependencies {
 
     //picasso
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    //shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 }

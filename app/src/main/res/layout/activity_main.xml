@@ -42,6 +42,41 @@
                 android:id="@+id/myRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:shimmer_repeat_mode="restart"
+
+                app:shimmer_shape="linear"
+                android:animateLayoutChanges="true"
+                android:animationCache="true"
+                >
+
+                <!--For shimmer we are creating a same
+                    layout but setting its background
+                    as a gray colour and not providing
+                    any view inside it-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+
+                    <!--below we are displaying multiple
+                        shimmer layouts using include
+                        to show them in list format-->
+                    <include layout="@layout/shimmer_list_item" />
+                    <include layout="@layout/shimmer_list_item" />
+                    <include layout="@layout/shimmer_list_item" />
+
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
