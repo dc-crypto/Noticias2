@@ -1,5 +1,6 @@
 package com.diegocastro.noticias2.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.WebView
@@ -20,10 +21,21 @@ class DetalleNoticia : AppCompatActivity() {
 
         val texto = intent.extras?.getString("data")
         val noticia: Article = Gson().fromJson(texto, Article::class.java)
-
+        val myWebView: WebView = findViewById(R.id.myWebView)
         //binding.txtTitulo2.text = noticia.title
         //binding.txtNoticia2.text = noticia.description
-        val myWebView: WebView = findViewById(R.id.myWebView)
+
         myWebView.loadUrl(noticia.url)
+
+        val share_btn = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.share_btn)
+        share_btn.setOnClickListener {
+            val intent= Intent()
+            intent.action=Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT,"Hey, Check out this news "+noticia.url)
+            intent.type="text/plain"
+            startActivity(Intent.createChooser(intent,"Share To:"))
+
+
+        }
     }
 }
