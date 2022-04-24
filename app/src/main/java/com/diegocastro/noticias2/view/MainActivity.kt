@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         //2
         binding= ActivityMainBinding.inflate(layoutInflater)
 
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         //4. trae las noticias de la api al pulsar el boton
         binding.btnTraerNoticias.setOnClickListener {
-            binding.progressBar.visibility= View.VISIBLE
+            //binding.progressBar.visibility= View.VISIBLE
 
             mainViewModel.onBtnTraerNoticias()
             shimmerLayout.startShimmer()
@@ -73,9 +74,9 @@ class MainActivity : AppCompatActivity() {
             //aqui va el recycler view
             //binding.txtNoticias.text="Noticias: \n"
             //binding.txtNoticias.append("${Gson().toJson(it)}")
-            binding.progressBar.visibility=View.GONE
+            //binding.progressBar.visibility=View.GONE
             shimmerLayout.stopShimmer()
-            shimmerLayout.visibility = View.GONE
+            //shimmerLayout.visibility = View.GONE
             adaptador = AdaptadorRecycler(this, it.articles, this);
             myRecyclerView.adapter = adaptador
         })

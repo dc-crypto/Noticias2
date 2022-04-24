@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -46,6 +47,16 @@ class AdaptadorRecycler(var context: Context,
             var intent = Intent(actividad, DetalleNoticia::class.java)
             intent.putExtra("data", detalle)
             actividad.startActivity(intent)
+
+           //para compartir las noticias
+       holder.shareBtn.setOnClickListener {
+
+           val intent = Intent(Intent.ACTION_SEND)
+           intent.putExtra(Intent.EXTRA_TEXT, "Hey, checkout this news : " + listDatos[0].url)
+           intent.type = "text/plain"
+           context.startActivity(Intent.createChooser(intent, "Share with :"))
+
+           }
         }
     }
 
@@ -60,6 +71,7 @@ class AdaptadorRecycler(var context: Context,
         var imagen: ImageView
         var titulo: TextView
         var descripcion: TextView
+        val shareBtn: ImageButton = itemView.findViewById(R.id.share_btn)
 
         //contexto
         var con: Context
