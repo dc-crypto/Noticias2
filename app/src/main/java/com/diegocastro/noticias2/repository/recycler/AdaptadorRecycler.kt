@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.diegocastro.noticias2.R
 import com.diegocastro.noticias2.repository.retrofit.Article
+import com.diegocastro.noticias2.view.DetalleNoticia
 import com.diegocastro.noticias2.view.MainActivity
 import com.google.gson.Gson
 
@@ -39,13 +40,13 @@ class AdaptadorRecycler(var context: Context,
             .error(R.drawable.sinimagen)
             .into(holder.imagen);
 
-       /* holder.itemView.setOnClickListener {
+       holder.itemView.setOnClickListener {
             var detalle = Gson().toJson(listDatos[holder.layoutPosition])
 
-            var intent = Intent(actividad, SegundaActivity::class.java)
+            var intent = Intent(actividad, DetalleNoticia::class.java)
             intent.putExtra("data", detalle)
             actividad.startActivity(intent)
-        }*/
+        }
     }
 
 
