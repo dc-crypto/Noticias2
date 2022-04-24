@@ -25,7 +25,7 @@ class AdaptadorRecycler(var context: Context,
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderDatos {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_recycler, null, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, null, false)
         return ViewHolderDatos(view)
     }
 
