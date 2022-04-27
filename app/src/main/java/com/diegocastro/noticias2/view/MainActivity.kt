@@ -14,6 +14,9 @@ import com.diegocastro.noticias2.viewmodel.ViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.gson.Gson
 import androidx.recyclerview.widget.DividerItemDecoration
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,16 +60,20 @@ class MainActivity : AppCompatActivity() {
 
         shimmerLayout = findViewById(R.id.shimmerLayout)
 
+        shimmerLayout.startShimmer()
+        mainViewModel.onBtnTraerNoticias()
+        myRecyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
+
 
         //4. trae las noticias de la api al pulsar el boton
-        binding.btnTraerNoticias.setOnClickListener {
+       /*binding.btnTraerNoticias.setOnClickListener {
             //binding.progressBar.visibility= View.VISIBLE
 
             mainViewModel.onBtnTraerNoticias()
             shimmerLayout.startShimmer()
             myRecyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
 
-        }
+        }*/
     }
 
     private fun observar() {

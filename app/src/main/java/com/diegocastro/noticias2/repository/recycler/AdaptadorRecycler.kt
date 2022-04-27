@@ -39,26 +39,29 @@ class AdaptadorRecycler(var context: Context,
         Glide.with(context)
             .load(listDatos[position].urlToImage)
             .error(R.drawable.sinimagen)
-            .into(holder.imagen);
+            .into(holder.imagen)
 
        holder.itemView.setOnClickListener {
-            var detalle = Gson().toJson(listDatos[holder.layoutPosition])
+            val detalle = Gson().toJson(listDatos[holder.layoutPosition])
 
-            var intent = Intent(actividad, DetalleNoticia::class.java)
+            val intent = Intent(actividad, DetalleNoticia::class.java)
             intent.putExtra("data", detalle)
             actividad.startActivity(intent)
 
            //para compartir las noticias https://developer.android.com/training/sharing/send
-       holder.shareBtn.setOnClickListener {
 
-           val intent2 = Intent(Intent.ACTION_SEND)
-           intent2.putExtra(Intent.EXTRA_TEXT, "Hey, checkout this news : " + listDatos[0].url)
-           intent2.type = "text/plain"
-           context.startActivity(Intent.createChooser(intent2, "Share with :"))
+        }
+        holder.shareBtn.setOnClickListener {
 
-           }
+            val intent= Intent()
+            intent.action=Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT,"Hey, Check out this news "+ listDatos[0].url)
+            intent.type="text/plain"
+            context.startActivity(Intent.createChooser(intent,"Share To:"))
+
         }
     }
+
 
 
 
@@ -71,7 +74,7 @@ class AdaptadorRecycler(var context: Context,
         var imagen: ImageView
         var titulo: TextView
         var descripcion: TextView
-        val shareBtn: ImageButton = itemView.findViewById(R.id.share_btn)
+        val shareBtn: ImageButton
 
         //contexto
         var con: Context
@@ -80,6 +83,7 @@ class AdaptadorRecycler(var context: Context,
             imagen = itemView.findViewById(R.id.myImagen)
             titulo = itemView.findViewById(R.id.myTitulo)
             descripcion = itemView.findViewById(R.id.myDes)
+            shareBtn=itemView.findViewById(R.id.share_btn)
             con = context
         }
     }

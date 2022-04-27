@@ -9,6 +9,9 @@ import com.diegocastro.noticias2.R
 import com.diegocastro.noticias2.databinding.ActivityDetalleNoticiaBinding
 import com.diegocastro.noticias2.repository.retrofit.Article
 import com.google.gson.Gson
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class DetalleNoticia : AppCompatActivity() {
 
@@ -26,6 +29,7 @@ class DetalleNoticia : AppCompatActivity() {
         //binding.txtNoticia2.text = noticia.description
 
         myWebView.loadUrl(noticia.url)
+
 
         val share_btn = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.share_btn)
         share_btn.setOnClickListener {
