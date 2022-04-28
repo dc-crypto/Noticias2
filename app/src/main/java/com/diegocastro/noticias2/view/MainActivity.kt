@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
             //binding.txtNoticias.append("${Gson().toJson(it)}")
             //binding.progressBar.visibility=View.GONE
             shimmerLayout.stopShimmer()
-            //shimmerLayout.visibility = View.GONE
+            shimmerLayout.visibility = View.GONE
             adaptador = AdaptadorRecycler(this, it.articles, this);
             myRecyclerView.adapter = adaptador
         })

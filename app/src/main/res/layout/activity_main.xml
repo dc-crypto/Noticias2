@@ -15,18 +15,17 @@
         android:layout_marginTop="36dp"
         android:visibility="gone" />
 
-    <Button
-        android:id="@+id/btnTraerNoticias"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Trae Noticias" />
+
 
     <TextView
         android:id="@+id/txtNoticias"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:text="Noticias" />
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_marginTop="15dp"
+        android:text="DIGITAL TALENT ANDROID NEWS" />
 
     <ScrollView
         android:id="@+id/myScroll"
@@ -54,20 +53,12 @@
                 android:animationCache="true"
                 >
 
-                <!--For shimmer we are creating a same
-                    layout but setting its background
-                    as a gray colour and not providing
-                    any view inside it-->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-
-
-                    <!--below we are displaying multiple
-                        shimmer layouts using include
-                        to show them in list format-->
                     <include layout="@layout/shimmer_list_item" />
                     <include layout="@layout/shimmer_list_item" />
                     <include layout="@layout/shimmer_list_item" />

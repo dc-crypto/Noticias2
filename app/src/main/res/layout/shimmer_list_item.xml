@@ -14,8 +14,6 @@
         android:textStyle="bold"
         android:background="#B3B3B3"/>
 
-
-
     <ImageView
         android:id="@+id/news_image"
         android:layout_width="match_parent"
