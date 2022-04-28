@@ -33,7 +33,7 @@ class AdaptadorRecycler(var context: Context,
     override fun onBindViewHolder(holder: ViewHolderDatos, position: Int) {
 
         holder.itemView.animation =
-            AnimationUtils.loadAnimation(context, R.anim.fade_transition)
+            AnimationUtils.loadAnimation(context, R.anim.transition)
         holder.titulo.text = Html.fromHtml(listDatos[position].title)
         holder.descripcion.text = Html.fromHtml(listDatos[position].description)
 
