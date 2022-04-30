@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "91407281797",
+    "project_id": "login2-fc8de",
+    "storage_bucket": "login2-fc8de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91407281797:android:e3a8fcba1e286bf597c3ec",
+        "android_client_info": {
+          "package_name": "com.diegocastro.noticias2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91407281797-bmh1ejd4u88ilskr7msi8uaneip95k47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH3C3E4Fh-pYVU6CGTrQ-SMBvJtGmSwlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "91407281797-bmh1ejd4u88ilskr7msi8uaneip95k47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
